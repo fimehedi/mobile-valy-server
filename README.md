@@ -4,6 +4,8 @@ Mobile Valy API is a Node Application. It's hosted on Heroku.
 
 ## APIs
 
+[https://mobile-valy.herokuapp.com/[api]](https://mobile-valy.herokuapp.com)
+
 * GET - /products - For all products
 * GET - /product/:id - For a single product
 * GET - /orders - Specific user order (user email required in req.headers)
