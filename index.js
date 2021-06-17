@@ -77,7 +77,17 @@ client.connect(err => {
             })
     })
 
+    app.delete('/orderCancel/:id', (req, res) => {
+        ordersCollection.deleteOne({ _id: ObjectId(req.params.id) })
+            .then(result => {
+                res.send({
+                    isDeleted: result.deletedCount > 0
+                })
+            })
+            .catch(error => res.send({ isError: true, errorMsg: 'Something went wrong' }))
+    })
+
 });
 
 
-app.listen(PORT, () => console.log(`Server Running on http://loacalhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server Running on http://localhost:${PORT}`));
